@@ -214,7 +214,11 @@
             if (window["WebSocket"]) {
                 console.log("supports websockets");
                 // Connect to websocket using OTP as a GET parameter
-                conn = new WebSocket("ws://" + document.location.host + "/ws?otp=" + otp);
+                var socketURL = "wss://" + document.location.host + "/ws?otp=" + otp;
+                if (document.location.host.includes("localhost")){
+                    socketURL = "ws://" + document.location.host + "/ws?otp=" + otp;
+                }
+                conn = new WebSocket(socketURL);
 
                 // Onopen
                 conn.onopen = function (evt) {

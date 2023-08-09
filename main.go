@@ -35,7 +35,6 @@ func setupAPI(ctx context.Context) {
 
 	// Serve the ./frontend directory at Route /
 	http.Handle("/", http.FileServer(http.Dir("./frontend")))
-	http.Handle("/prod", http.FileServer(http.Dir("./frontend-production")))
 	http.HandleFunc("/login", manager.loginHandler)
 	http.HandleFunc("/ws", manager.serveWS)
 
