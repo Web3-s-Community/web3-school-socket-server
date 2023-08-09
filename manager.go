@@ -42,8 +42,10 @@ func checkOrigin(r *http.Request) bool {
 	case "http://localhost:8001":
 		return true
 	case "https://socket.web3school.fun":
+		println("Return true")
 		return true
 	default:
+		println("Return false")
 		return false
 	}
 }
