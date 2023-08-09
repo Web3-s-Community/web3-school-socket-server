@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"log"
 	"net/http"
 	"sync"
@@ -33,6 +34,8 @@ func checkOrigin(r *http.Request) bool {
 
 	// Grab the request origin
 	origin := r.Header.Get("Origin")
+
+	fmt.Println("Origin got: " + origin)
 
 	switch origin {
 	// Update this to HTTPS
