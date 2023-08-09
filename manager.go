@@ -41,6 +41,8 @@ func checkOrigin(r *http.Request) bool {
 	// Update this to HTTPS
 	case "http://localhost:8001":
 		return true
+	case "https://socket.web3school.fun":
+		return true
 	default:
 		return false
 	}
