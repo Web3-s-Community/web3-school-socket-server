@@ -36,7 +36,7 @@ func checkOrigin(r *http.Request) bool {
 
 	switch origin {
 	// Update this to HTTPS
-	case "https://localhost:8080":
+	case "http://localhost:8001":
 		return true
 	default:
 		return false

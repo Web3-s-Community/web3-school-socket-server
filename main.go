@@ -18,7 +18,9 @@ func main() {
 	setupAPI(ctx)
 
 	// Serve on port :8080, fudge yeah hardcoded port
-	err := http.ListenAndServeTLS(":8080", "server.crt", "server.key", nil)
+	port := 8001
+	fmt.Printf("Listening on port: %v", port)
+	err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

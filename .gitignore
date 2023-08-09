@@ -4,3 +4,5 @@ complete
 .vscode
 *.crt
 *.key
+.idea
+vendor
