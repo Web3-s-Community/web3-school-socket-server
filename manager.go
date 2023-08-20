@@ -97,6 +97,7 @@ func (m *Manager) routeEvent(event Event, c *Client) error {
 
 // loginHandler is used to verify an user authentication and return a one time password
 func (m *Manager) loginHandler(w http.ResponseWriter, r *http.Request) {
+	EnableCors(&w)
 
 	type userLoginRequest struct {
 		Username string `json:"username"`
@@ -141,6 +142,7 @@ func (m *Manager) loginHandler(w http.ResponseWriter, r *http.Request) {
 
 // serveWS is a HTTP Handler that the has the Manager that allows connections
 func (m *Manager) serveWS(w http.ResponseWriter, r *http.Request) {
+	EnableCors(&w)
 
 	// Grab the OTP in the Get param
 	otp := r.URL.Query().Get("otp")

@@ -42,3 +42,6 @@ func setupAPI(ctx context.Context) {
 		fmt.Fprint(w, len(manager.clients))
 	})
 }
+func EnableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
+}
